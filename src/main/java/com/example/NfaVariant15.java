@@ -83,7 +83,7 @@ public class NfaVariant15 {
             false   // qerr
     };
 
-    /** Начальное состояние НКА — q0. */
+    /** Начальное состояние НКА - q0. */
     private static final int INITIAL_STATE = 0;
 
     /**
@@ -107,7 +107,7 @@ public class NfaVariant15 {
      *   1. current = {INITIAL_STATE}.
      *   2. Для каждого символа:
      *      - определить индекс символа;
-     *      - если символ недопустим - вывести ошибку и вернуть false;
+     *      - если символ недопустим - вернуть false;
      *      - собрать все возможные следующие состояния
      *        из всех текущих состояний.
      *   3. Если хотя бы одно из текущих состояний принимающее - true.
@@ -122,7 +122,6 @@ public class NfaVariant15 {
         for (int i = 0; i < input.length; i++) {
             int idx = symbolIndex(input[i]);
             if (idx == -1) {
-                System.out.println("Ошибка: символ '" + input[i] + "' не входит в алфавит");
                 return false;
             }
             Set<Integer> next = new HashSet<>();
